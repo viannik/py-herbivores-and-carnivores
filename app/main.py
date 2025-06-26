@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import ClassVar
 
 
 @dataclass
@@ -7,7 +8,7 @@ class Animal:
     health: int = 100
     hidden: bool = False
 
-    alive = []
+    alive: ClassVar[list] = []
 
     def __post_init__(self) -> None:
         Animal.alive.append(self)
