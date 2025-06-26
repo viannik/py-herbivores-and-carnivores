@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from dataclasses import dataclass
 from typing import ClassVar
 
@@ -8,7 +10,7 @@ class Animal:
     health: int = 100
     hidden: bool = False
 
-    alive: ClassVar[list] = []
+    alive: ClassVar[list[Animal]] = []
 
     def __post_init__(self) -> None:
         Animal.alive.append(self)
